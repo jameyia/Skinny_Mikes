@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8" />
+	<title>What's New - Skinny Mike's Hawaiian Ice Cream</title>
+	<meta name="viewport" content="device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/header.js"></script>
+	
+	<!-- HEADER -->
+	<script>
+		$(document).ready(function(){
+		
+		//Icons
+			
+			$(".icons-social-cone img").hover(
+				function(){ //in function
+					var path = $(this).attr("src");
+					var extPos = path.search(".png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat("-hover.png"));},
+				
+				function(){ //out function
+					var path = $(this).attr("src");
+					var extPos = path.search("-hover.png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat(".png"));
+				}
+			);
+		
+		});
+	</script>
+	
+</head>
+<body>
+	<div class="page">
+	<!-- Logo, Hours, Location Banner-->
+	<header role="banner">
+			<a href="index.html">
+			<img src="images/logo.png" class="logo" alt="Skinny Mike's Hawaiian Ice Cream" />
+			<div class ="company-name">
+				<span id="company-name-line-1">Skinny Mike's</span><br />
+				<span id="company-name-line-2">Hawaiian Ice Cream</span>
+			</div>
+			</a>
+			
+			<!-- ICE CREAM CONE -->
+			<div class="icons-social-cone">
+			<span class="wifi">Free WiFi so you can</span><br />
+			<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts">
+			<img src="icons/ice-cream-fb-icon.png" alt="Like us on Facebook" />
+			</a>
+			<a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html">
+			<img src="icons/ice-cream-trip-advisor-icon.png" alt="Check us out on Trip Advisor" />
+			</a>
+			<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue">
+			<img src="icons/ice-cream-yelp-icon.png" alt="Rave about us on Yelp" />
+			</a>
+			<a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts">
+			<img src="icons/ice-cream-gplus-icon.png" alt="Check us out on Google +" />
+			</a>
+			</div>
+			
+			<!-- LINE ICONS -->
+			<ul class="icons-social-original">
+				<li><a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a></li><!--
+				--><li><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor"/></a></li><!--
+				--><li><a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us on Yelp" /></a></li><!--
+				--><li><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a></li>
+			</ul>
+			
+			<!-- CUBE ICONS -->
+			<div class="icons-social-cube">
+				<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a><!--
+				--><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor" /></a>
+				<br />
+				<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us Yelp" /></a><!--
+				--><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a>
+			</div>	
+	</header>
+	
+		<!-- Navigation Banner Mobile-->
+	<nav role="navigation" id="list" onclick="displayMenu()">
+		<div class="menu-head">˅ SITE MENU ˅</div>
+		<ul id="menu-list">
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>	
+	</nav>
+			
+		
+		<!-- Navigation Banner Desktop -->
+	<nav role="navigation" id="bar">
+		<ul>
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Main Content -->
+	<main role="main">
+	<h1>What's New</h1>	
+		<p>Here we will list our latest and greatest additions to our product line. We currently have some exciting products in development, so stay tuned for future updates from this page. Also, to be in the loop, be sure to like us on Facebook, check us out on Trip Advisor, rave about us on Yelp, and add us on Google+ using the links above.</p>
+	</main>
+	
+	<!-- Footer -->
+	<!-- TODO Add links on footer -->
+	<footer>
+		<small><a href="https://www.linkedin.com/pub/jameyia-shamia/98/225/69">Site designed by Jameyia Shamia</a></small>
+	</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8" />
+	<title>Beverages - Skinny Mike's Hawaiian Ice Cream</title>
+	<meta name="viewport" content="device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	<link rel="stylesheet" href="css/beverages.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/header.js"></script>
+	
+	<!-- Photo Rotator -->
+	<script>
+		$(document).ready(function(){
+			
+			//Icons
+			
+			$(".icons-social-cone img").hover(
+				function(){ //in function
+					var path = $(this).attr("src");
+					var extPos = path.search(".png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat("-hover.png"));},
+				
+				function(){ //out function
+					var path = $(this).attr("src");
+					var extPos = path.search("-hover.png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat(".png"));
+				}
+			);
+			
+			setInterval(function(){
+				setTimeout(function(){rotatePhoto("shakes")}, 200);
+				setTimeout(function(){rotatePhoto("coffee")}, 400);
+				setTimeout(function(){rotatePhoto("floats")}, 600);
+			}, 3000);
+		});
+		
+			
+		function rotatePhoto(rotatorClass) {
+			var currentPhotoString = ".photo-rotator." + rotatorClass + " img.active";
+			var currentPhoto = $(currentPhotoString);
+			var nextPhotoString = ".photo-rotator." + rotatorClass + " img:first";
+			var nextPhoto = (currentPhoto.next().length > 0) ? currentPhoto.next() : $(nextPhotoString);
+			
+			nextPhoto.css('z-index', 2);
+			currentPhoto.fadeOut(1000, function(){
+				currentPhoto.css('z-index', 1).show().removeClass('active');
+				nextPhoto.css('z-index', 3).addClass('active');
+				});	
+		}
+	</script>
+</head>
+<body>
+	<div class="page">
+	<!-- Logo, Hours, Location Banner-->
+	<header role="banner">
+			<a href="index.html">
+			<img src="images/logo.png" class="logo" alt="Skinny Mike's Hawaiian Ice Cream" />
+			<div class ="company-name">
+				<span id="company-name-line-1">Skinny Mike's</span><br />
+				<span id="company-name-line-2">Hawaiian Ice Cream</span>
+			</div>
+			</a>
+			
+			<!-- ICE CREAM CONE -->
+			<div class="icons-social-cone">
+			<span class="wifi">Free WiFi so you can</span><br />
+			<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts">
+			<img src="icons/ice-cream-fb-icon.png" alt="Like us on Facebook" />
+			</a>
+			<a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html">
+			<img src="icons/ice-cream-trip-advisor-icon.png" alt="Check us out on Trip Advisor" />
+			</a>
+			<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue">
+			<img src="icons/ice-cream-yelp-icon.png" alt="Rave about us on Yelp" />
+			</a>
+			<a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts">
+			<img src="icons/ice-cream-gplus-icon.png" alt="Check us out on Google +" />
+			</a>
+			</div>
+			
+			<!-- LINE ICONS -->
+			<ul class="icons-social-original">
+				<li><a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a></li><!--
+				--><li><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor"/></a></li><!--
+				--><li><a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us on Yelp" /></a></li><!--
+				--><li><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a></li>
+			</ul>
+			
+			<!-- CUBE ICONS -->
+			<div class="icons-social-cube">
+				<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a><!--
+				--><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor" /></a>
+				<br />
+				<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us Yelp" /></a><!--
+				--><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a>
+			</div>	
+	</header>
+	
+		<!-- Navigation Banner Mobile-->
+	<nav role="navigation" id="list" onclick="displayMenu()">
+		<div class="menu-head">˅ SITE MENU ˅</div>
+		<ul id="menu-list">
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>	
+	</nav>
+			
+		
+		<!-- Navigation Banner Desktop -->
+	<nav role="navigation" id="bar">
+		<ul>
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Main Content -->
+	<main role="main">
+		<h1>Beverages</h1>	
+		<p>We are excited to be more than just an ice cream store with the addition of our custom beverages. Try some of our creations below or even grab one of your favorite retail beverages. Whether it's cooling off on a hot day or getting the boost you need for your long day we've got something for you!</p>
+		<h2>In-House</h2>
+		<p>Here we make three main beverages. We have Wake-Up Shakes, coffee, and ice cream floats. All of our creations are customizable with different flavors and ice creams, just ask our staff to set you up with your favorite style!</p>
+		<div class="beverages">
+			<div class="photo-rotator shakes">
+				<img class="active" src="images/shakes/vanilla.jpg" alt="Vanilla Shake" />
+				<img src="images/shakes/mint.jpg" alt="Mint Shake" />
+				<img src="images/shakes/unidentified.jpg" alt="Unidentified" />
+			</div><!--
+			--><div class="photo-rotator coffee">
+				<img class="active" src="images/coffee/coffee_01.jpg" alt="Ice Coffee"/>
+				<img src="images/coffee/coffee_02.jpg" alt="Hot Coffee" />
+			</div><!--
+			--><div class="photo-rotator floats">
+				<img class="active" src="images/floats/vanilla.jpg" alt="Rootbeer float" />
+				<img src="images/floats/vanilla_02.jpg" alt="Caramel Shake" />
+			</div>
+			<!-- BACKUP IMAGES -->
+			<img class="backup-image" src="images/shakes/vanilla.jpg" alt="Vanilla Shake" /><!--
+			--><img class="backup-image" src="images/coffee/coffee_01.jpg" alt="Coffee" /><!--
+			--><img class="backup-image" src="images/floats/vanilla.jpg" alt="Rootbeer Float" />
+		</div>
+		<ul class="beverage-header">
+			<li><h3>Shakes</h3></li><!--
+			--><li><h3>Coffee</h3></li><!--
+			--><li><h3>Floats</h3></li>
+		</ul>
+		<h2>Retail</h2>
+		<ul class="retail">
+			<li><a href="http://kauaijuiceco.com/"><img src="images/retail/kauaijuice.png" alt="Kauai Juice Co"/></a></li><!--
+			--><li><a href="http://www.konared.com/"><img src="images/retail/konared.png" alt="Kona Red" /></a></li><!--
+			--><li><a href="http://www.waialuasodaworks.com/"><img src="images/retail/waialua.png" alt="Waialua" /></a></li><!--
+			--><li><a href="http://www.drinkwaikoko.com/index.html"><img src="images/retail/waikoko.png" alt="WaiKoko" /></a></li>
+		</ul>
+	</main>
+	
+	<!-- Footer -->
+	<!-- TODO Add links on footer -->
+	<footer>
+		<small><a href="https://www.linkedin.com/pub/jameyia-shamia/98/225/69">Site designed by Jameyia Shamia</a></small>
+	</footer>
+	</div>
+</body>
+</html>

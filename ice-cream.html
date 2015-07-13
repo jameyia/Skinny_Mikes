@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ice Cream - Skinny Mike's Hawaiian Ice Cream</title>
+	<meta name="viewport" content="device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	<link rel="stylesheet" href="css/ice-cream.css" />
+	
+	<!-- GOOGLE jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/header.js"></script>
+	
+	<!-- Photo Rotator -->
+	<script>
+		$(document).ready(function(){
+			
+			//Icons
+			
+			$(".icons-social-cone img").hover(
+				function(){ //in function
+					var path = $(this).attr("src");
+					var extPos = path.search(".png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat("-hover.png"));},
+				
+				function(){ //out function
+					var path = $(this).attr("src");
+					var extPos = path.search("-hover.png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat(".png"));
+				}
+			);
+			
+			setInterval(function(){rotatePhoto("sundaes")}, 3000);
+			
+		});
+		
+			
+		function rotatePhoto(rotatorClass) {
+			var currentPhotoString = ".photo-rotator." + rotatorClass + " img.active";
+			var currentPhoto = $(currentPhotoString);
+			var nextPhoto = (currentPhoto.next().length > 0) ? currentPhoto.next() : $('.photo-rotator img:first');
+			
+			nextPhoto.css('z-index', 2);
+			currentPhoto.fadeOut(1000, function(){
+				currentPhoto.css('z-index', 1).show().removeClass('active');
+				nextPhoto.css('z-index', 3).addClass('active');
+				});	
+		}
+	</script>
+</head>
+<body>
+	<div class="page">
+	<!-- Logo, Hours, Location Banner-->
+	<header role="banner">
+			<a href="index.html">
+			<img src="images/logo.png" class="logo" alt="Skinny Mike's Hawaiian Ice Cream" />
+			<div class ="company-name">
+				<span id="company-name-line-1">Skinny Mike's</span><br />
+				<span id="company-name-line-2">Hawaiian Ice Cream</span>
+			</div>
+			</a>
+			
+			<!-- ICE CREAM CONE -->
+			<div class="icons-social-cone">
+			<span class="wifi">Free WiFi so you can</span><br />
+			<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts">
+			<img src="icons/ice-cream-fb-icon.png" alt="Like us on Facebook" />
+			</a>
+			<a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html">
+			<img src="icons/ice-cream-trip-advisor-icon.png" alt="Check us out on Trip Advisor" />
+			</a>
+			<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue">
+			<img src="icons/ice-cream-yelp-icon.png" alt="Rave about us on Yelp" />
+			</a>
+			<a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts">
+			<img src="icons/ice-cream-gplus-icon.png" alt="Check us out on Google +" />
+			</a>
+			</div>
+			
+			<!-- LINE ICONS -->
+			<ul class="icons-social-original">
+				<li><a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a></li><!--
+				--><li><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor"/></a></li><!--
+				--><li><a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us on Yelp" /></a></li><!--
+				--><li><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a></li>
+			</ul>
+			
+			<!-- CUBE ICONS -->
+			<div class="icons-social-cube">
+				<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a><!--
+				--><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor" /></a>
+				<br />
+				<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us Yelp" /></a><!--
+				--><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a>
+			</div>	
+	</header>
+	
+		<!-- Navigation Banner Mobile-->
+	<nav role="navigation" id="list" onclick="displayMenu()">
+		<div class="menu-head">˅ SITE MENU ˅</div>
+		<ul id="menu-list">
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>	
+	</nav>
+			
+		
+		<!-- Navigation Banner Desktop -->
+	<nav role="navigation" id="bar">
+		<ul>
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Main Content -->
+	<main role="main">
+	<h1>Ice Cream</h1>	
+	<p>We carry a wide variety of ice cream and create our own sundaes! Want to be reminded of fond campfire s'more making memories while cooling down from the hot weather? Or would you rather try our tropical Banana Split? Or perhaps you want to come up with your own creation? Whatever your style, our staff will be able to craft the perfect treat for you! Take a look at our creations below!</p>
+	<h2>Sundaes</h2>
+		<div class="photo-rotator sundaes">
+			<img class="active" src="images/sundaes/smore.jpg" alt="S'more Sundae"/>
+			<img src="images/sundaes/tropical2.jpg" alt="Tropical Sundae" />
+			<img src="images/sundaes/mint.jpg" alt="Mint Sundae" />
+			<img src="images/sundaes/multiple.jpg" alt="Multiple" />
+		</div>
+		<img class="backup-image" src="images/sundaes/smore.jpg" alt="S'more Sundae" />
+	<h2>Flavors</h2>
+	<p>We are always switching in and switching out new flavors at our store, so come down and visit to see the latest. In addition, we carry <span class="sorbet">sorbets</span> and <span class="vegan">vegan</span> ice cream! Below is a sampling of some our flavors!</p>
+	<ul class="flavors">
+		<li class="sorbet">Mango Sorbet</li><!--
+		--><li class="sorbet">Pog Sorbet</li><!--
+		--><li class="sorbet">Lychee Sorbet</li><!--
+		--><li class="sorbet">Lemongrass Sorbet</li><!--
+		--><li class="regular">Chocolate</li><!--
+		--><li class="regular">Pineapple Cream</li><!--
+		--><li class="regular">Strawberry Cream</li><!--
+		--><li class="regular">Ginger Cream</li><!--
+		--><li class="regular">Green Tea</li><!--
+		--><li class="regular">Ube</li><!--
+		--><li class="regular">Tahitian Vanilla</li><!--
+		--><li class="regular">Pistachio Cream</li><!--
+		--><li class="regular">Kona Coffee</li><!--
+		--><li class="regular">Mocha Java Chip</li><!--
+		--><li class="regular">Vanilla</li><!--
+		--><li class="regular">Dark Cherry Vanilla</li><!--
+		--><li class="vegan">Vegan Chocolate</li><!--
+		--><li class="regular">Mint Chocolate Chip</li><!--
+		--><li class="regular">Butter Pecan</li><!--
+		--><li class="regular">Peanut Butter Fudge Swirl</li><!--
+		--><li class="regular">Orange Dreamsicle</li><!--
+		--><li class="regular">Macadamia Nut</li><!--
+		--><li class="regular">Salted Caramel Swirl</li><!--
+		--><li class="regular">Chocolate Chocolate Chip</li>
+	</ul>
+	<h2>Toppings</h2>
+	<ul class="toppings">
+		<li>Sprinkles</li><!--
+		--><li>Hot Fudge</li><!--
+		--><li>Oreo Crumbs</li><!--
+		--><li>Mac Nuts</li><!--
+		--><li>Caramel</li><!--
+		--><li>Li Hing Mui</li><!--
+		--><li>Peanuts</li><!--
+		--><li>Whipped Cream</li>
+	</ul>
+	</main>
+	
+	<!-- Footer -->
+	<!-- TODO Add links on footer -->
+	<footer>
+		<small><a href="https://www.linkedin.com/pub/jameyia-shamia/98/225/69">Site designed by Jameyia Shamia</a></small>
+	</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* === FLAVORS === */
+
+
+.regular {color: #FF2F92; font-weight: bold;}
+.sorbet {color: #00F900; font-weight: bold;}
+.vegan {color: #0096FF; font-weight: bold;}
+
+/* === FONTS === */
+
+@font-face {
+	font-family: felixTI;
+	src: url(../fonts/felixti.ttf);
+}
+
+
+@font-face {
+	font-family: heading1;
+	src: url(../fonts/lcallig.ttf);
+	/*src: url(../fonts/magnetob.ttf);*/
+}
+	
+@font-face {
+	font-family: vijaya;
+	src: url(../fonts/vijaya.ttf);
+}
+
+h1 {
+	font-family: heading1;
+	font-size: 2em;
+}
+
+h2 {
+	font-family: felixTI;
+	letter-spacing: 0.4em;
+	margin: 1em 0;
+	}
+
+h3 {
+	font-family: "Copperplate Gothic";
+	letter-spacing: 0.2em;
+}
+/* === OTHER === */
+
+header {position: initial;}
+
+body {
+	background: #66CCFF;
+}
+.page {
+	max-width: 60em;
+	margin: 2em auto;
+	background: #FFFFFF;
+}
+
+/* === PHOTO ROTATOR === */
+
+.photo-rotator {
+	position: relative;
+	height: 20em;
+	width: 100%;
+	background: #000000;
+	}
+
+.photo-rotator img{
+	display: block;
+	position: absolute;
+	
+	max-height: 100%;
+	max-width: 100%;
+	
+	z-index: 1;
+	
+	/* Center image in DIV */
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	
+	}
+	
+.photo-rotator img.active {
+	z-index: 3;
+}
+
+.backup-image {
+	display: none;
+	margin: 0 auto;
+	max-height: 20em;
+	max-width: 100%;
+	}
+
+/* === HEADER === */
+
+/* See header.css */
+
+/* === MAIN === */
+
+h1 {text-align: center;}
+
+main {
+	padding: 1em 10%;
+}
+
+
+p {
+	font-family: Calibri, sans-serif;
+	margin: 1em auto;
+	text-align: center;
+	width: 80%;
+	font-size: 1.1em;
+}
+
+/* === FOOTER === */
+
+footer {
+	background-color: #000000;
+	text-align: right;
+	color: #0000AA;
+	font-size: 1.5em;
+	
+	font-family: vijaya;
+	font-size: 1.8em;
+	padding: 0.1em 0.5em;
+}
+
+footer a:link,
+footer a:visited,
+footer a:active
+{
+	text-decoration: none;
+	color: #0000AA;
+}
+
+footer a:hover {
+	color: #00FFFF;
+}
+
+@media only screen and (max-width: 44em)
+{
+	.photo-rotator {
+		display: none;
+	}
+	
+	.backup-image {
+		display: block;
+	}
+	
+	p {
+		width: 100%;
+		font-size: 1em;
+	}
+}

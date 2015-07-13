@@ -1,0 +1,36 @@
+/*
+*	This Style Sheet is for the home page
+*/
+
+
+
+/* === MAIN CONTENT === */
+
+h2 {
+	text-align: center;	}
+
+main {
+	background-color: #FFFFFF;
+}
+
+main img {
+	display: block;
+	max-width: 80%;
+	margin: 1em auto;
+}
+
+
+p {
+	text-indent: 2em;
+	text-align: left;
+	width: 100%;
+}
+
+
+
+
+/* === FOOTER === */
+
+/* === END FOOTER === */
+
+

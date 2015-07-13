@@ -1,0 +1,190 @@
+<html lang = "en">
+<head>
+	<meta charset="utf-8" />
+	<title>Contact Us - Skinny Mike's Hawaiian Ice Cream</title>
+	<meta name="viewport" content="device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	<link rel="stylesheet" href="css/contact-us.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/header.js"></script>
+	
+	<!-- HEADER -->
+	<script>
+		$(document).ready(function(){
+		
+			//Icons
+			
+			$(".icons-social-cone img").hover(
+				function(){ //in function
+					var path = $(this).attr("src");
+					var extPos = path.search(".png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat("-hover.png"));},
+				
+				function(){ //out function
+					var path = $(this).attr("src");
+					var extPos = path.search("-hover.png");
+					path = path.slice(0, extPos);
+					
+					$(this).attr("src", path.concat(".png"));
+				}
+			);
+		
+		});
+	</script>
+	
+	<!-- GOOGLE MAPS -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(21.9613082,-159.3532483),
+          zoom: 18,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+		
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+		
+		//marker
+		var marker = new google.maps.Marker({
+			position: mapOptions.center,
+			icon: "icons/ice-cream-cone.png"
+		});
+		
+		marker.setMap(map);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+	<div class="page">
+	<!-- Logo, Hours, Location Banner-->
+	<header role="banner">
+			<a href="index.html">
+			<img src="images/logo.png" class="logo" alt="Skinny Mike's Hawaiian Ice Cream" />
+			<div class ="company-name">
+				<span id="company-name-line-1">Skinny Mike's</span><br />
+				<span id="company-name-line-2">Hawaiian Ice Cream</span>
+			</div>
+			</a>
+			
+			<!-- ICE CREAM CONE -->
+			<div class="icons-social-cone">
+			<span class="wifi">Free WiFi so you can</span><br />
+			<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts">
+			<img src="icons/ice-cream-fb-icon.png" alt="Like us on Facebook" />
+			</a>
+			<a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html">
+			<img src="icons/ice-cream-trip-advisor-icon.png" alt="Check us out on Trip Advisor" />
+			</a>
+			<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue">
+			<img src="icons/ice-cream-yelp-icon.png" alt="Rave about us on Yelp" />
+			</a>
+			<a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts">
+			<img src="icons/ice-cream-gplus-icon.png" alt="Check us out on Google +" />
+			</a>
+			</div>
+			
+			<!-- LINE ICONS -->
+			<ul class="icons-social-original">
+				<li><a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a></li><!--
+				--><li><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor"/></a></li><!--
+				--><li><a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us on Yelp" /></a></li><!--
+				--><li><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a></li>
+			</ul>
+			
+			<!-- CUBE ICONS -->
+			<div class="icons-social-cube">
+				<a href="https://www.facebook.com/pages/Skinny-Mikes-Hawaiian-Ice-Cream/1601062360112561?fref=ts"><img src="icons/fb.png" alt="Like us on Facebook" /></a><!--
+				--><a href="http://www.tripadvisor.com/Restaurant_Review-g60623-d8089639-Reviews-Skinny_Mike_s_Hawaiian_Ice_Cream-Lihue_Kauai_Hawaii.html"><img src="icons/trip-advisor.png" alt="Check us out on Trip Advisor" /></a>
+				<br />
+				<a href="http://www.yelp.com/biz/skinny-mikes-hawaiian-ice-cream-l%C4%ABhue"><img src="icons/yelp.png" alt="Rave about us Yelp" /></a><!--
+				--><a href="https://plus.google.com/u/2/b/112083869746713771551/112083869746713771551/posts"><img src="icons/gplus.png" alt="Check us out on Google +" /></a>
+			</div>	
+	</header>
+	
+		<!-- Navigation Banner Mobile-->
+	<nav role="navigation" id="list" onclick="displayMenu()">
+		<div class="menu-head">˅ SITE MENU ˅</div>
+		<ul id="menu-list">
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>	
+	</nav>
+			
+		
+		<!-- Navigation Banner Desktop -->
+	<nav role="navigation" id="bar">
+		<ul>
+			<!-- Comments used to get rid of spaces -->
+			<li><a href="index.html">HOME</a></li><!--
+			--><li><a href="ice-cream.html">ICE CREAM</a></li><!--
+			--><li><a href="beverages.html">BEVERAGES</a></li><!--
+			--><li><a href="whats-new.html">WHAT'S NEW</a></li><!--
+			--><li><a href="contact-us.html">CONTACT US</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Main Content -->
+	<main role="main">
+	<h1>Contact Us</h1>
+	<p>We are located in the front of the beautiful Harbor Mall in Nawiliwili near the cruise ship terminal. Stop on by as a way to cool down from hot tropical weather, and feel free to contact us via any method below for any questions you may have. Our hours are also listed below.</p>
+	<div id="map-canvas">
+	</div>
+	
+	<!-- Mobile Map -->
+	<a href="https://www.google.com/maps/@21.9613082,-159.3532483,20z">
+	<img id="map-image" src="images/map.png" alt="Map Image" />
+	</a>
+	
+	<ul class="info">
+		<li class="hours">
+			<h3>Hours</h3>
+			<hr />
+			<div class="hours-listing">
+				<div class="days">
+					Mon - Fri<br />
+					Sat - Sun
+				</div><!--
+				--><div class="hrs">
+					8:00am - 9:00pm<br />
+					8:00am - 9:00pm
+				</div>
+			</div>
+			<br />
+		</li><!--
+		--><li>
+			<h3>Location</h3>
+			<hr />
+			3501 Rice Street, Suite 1006<br />
+			Lihue, Kauai, HI 96766
+			<br /><br />
+			</li><!--
+		--><li>
+			<h3>Contact</h3>
+			<hr />
+			(808) 245-9386<br />
+			info@skinnymikesicecream.com
+			<br /><br />
+		</li>
+	</ul>
+	</main>
+	
+	<!-- Footer -->
+	<!-- TODO Add links on footer -->
+	<footer>
+		<small><a href="https://www.linkedin.com/pub/jameyia-shamia/98/225/69">Site designed by Jameyia Shamia</a></small>
+	</footer>
+	</div>
+</body>
+</html>

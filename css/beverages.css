@@ -1,0 +1,68 @@
+main {
+	background: #594B3B;
+}
+
+.beverages {
+	width: 100%;
+	/*Make Snap*/
+	background: #000000;
+	text-align: center;
+}
+
+.beverages .backup-image
+{
+	display: none;
+	
+	width: 33.3%;
+	vertical-align: middle;
+}
+.beverages .photo-rotator {
+	display: inline-block;
+	width: 33.333333%;
+}
+
+.beverage-header {
+	color: #FFFFFF;
+	background: #000000;
+	width: 100%;
+	text-align: center;
+}
+
+.beverage-header li {
+	display: inline-block;
+	width: 33.3%;
+}
+
+.beverage-header h3 {
+	width: 100%;
+	margin: 0;
+}
+
+.retail {
+	width: 100%;
+	text-align: center;
+}
+
+.retail li {	
+	display: inline-block;
+	width: 50%;
+	margin: 1em 0;
+	vertical-align: middle;
+}
+
+.retail img {
+	max-height: 4em;
+}
+
+/* === MEDIA QUERIES === */
+@media only screen and (max-width: 44em)
+{
+	.beverages .photo-rotator {
+		display: none;
+	}
+	
+	.beverages .backup-image
+	{
+		display: inline-block;
+	}
+}
